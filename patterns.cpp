@@ -284,58 +284,110 @@ void p15(int n)
     // outer loop
     for (int i = 0; i < n; i++)
     {
-        
-        for(char j='E' - i;j<='E';j++){
-            cout<<j;
+
+        for (char j = 'E' - i; j <= 'E'; j++)
+        {
+            cout << j;
         }
-        cout<<endl;
+        cout << endl;
     }
 }
 
+void p16(int n)
+{
 
-void p16(int n){
+    /*
+    **********
+    ****  ****
+    ***    ***
+    **      **
+    *        *
+    *        *
+    **      **
+    ***    ***
+    ****  ****
+    **********
+    */
 
-    //outer LOOP
-    for(int i=0;i<n;i++){
-        
-        //star
-        for(int j=0;j<(n-i);j++){
-            cout<<"*";    
+    // outer LOOP
+    for (int i = 0; i < n; i++)
+    {
+
+        // star
+        for (int j = 0; j < (n - i); j++)
+        {
+            cout << "*";
         }
-        //space
-        for(int s=0;s<(i*2);s++){
-            cout<<" ";
+        // space
+        for (int s = 0; s < (i * 2); s++)
+        {
+            cout << " ";
         }
-        //star
-        for(int k=0;k<(n-i);k++){
-            cout<<"*";    
+        // star
+        for (int k = 0; k < (n - i); k++)
+        {
+            cout << "*";
         }
-        cout<<endl;
-
-
+        cout << endl;
     }
-    int inis=8;
-    for(int i=0;i<n;i++){
-        //star
-        for(int j=0;j<=i;j++){
-            cout<<"*";    
+    int inis = 2 * n - 2;
+    for (int i = 0; i < n; i++)
+    {
+        // star
+        for (int j = 0; j <= i; j++)
+        {
+            cout << "*";
         }
-        //space
-        for(int s=0;s<inis;s++){
-            cout<<" ";
+        // space
+        for (int s = 0; s < inis; s++)
+        {
+            cout << " ";
         }
-        //star
-        for(int k=0;k<=i;k++){
-            cout<<"*";    
+        // star
+        for (int k = 0; k <= i; k++)
+        {
+            cout << "*";
         }
-        inis-=2;
-        cout<<endl;
+        inis -= 2;
+        cout << endl;
+    }
+}
 
+void p17(int n)
+{
+    int spaces = 2 * n - 2;
+    // outer Loop
+
+    for (int i = 0; i <= 2 * n - 1; i++)
+    {
+        int stars = i;
+        if (i > n)
+            stars = 2 * n - i;
+        // star
+        for (int i1 = 1; i1 <= stars; i1++)
+        {
+            cout << "*";
+        }
+
+        // space
+        for (int i1 = 1; i1 <= spaces; i1++)
+        {
+            cout << " ";
+        }
+
+        // star
+        for (int i1 = 1; i1 <= stars; i1++)
+        {
+            cout << "*";
+        }
+        cout << endl;
+        if(i<n) spaces-=2;
+        else spaces+=2;
     }
 }
 int main()
 {
-    p16(5);
+    p17(6);
     cout << endl;
 
     return 0;
